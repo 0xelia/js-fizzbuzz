@@ -1,16 +1,43 @@
-#grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 0.8rem;
+:root {
+    --gold: rgb(230, 199, 20);
+    --cell_standard: rgb(182, 110, 248);
+    --bg_color: rgb(121, 160, 234);
 }
 
-.cell  {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg_color);
+    font-family: Helvetica;
+}
+
+.main-title {
+    color: var(--gold);
+    font-size: 2rem;
+    text-align: center;
+    padding: 3rem 0 1rem 0;
+}
+
+#grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    padding: 2rem 3.5rem;
+}
+
+.cell {
+
+    flex-basis: calc((100% / 7) - 0.8rem);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px;
-    background-color: blueviolet;
-    color: gold;
+    background-color: var(--cell_standard);
+    color: var(--gold);
     aspect-ratio: 1;
+    border-radius: 10px;
 }
 
